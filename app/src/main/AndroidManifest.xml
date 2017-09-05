@@ -22,8 +22,11 @@
 
         <!-- Main activity -->
         <activity android:name=".MainActivity" />
-        <activity android:name=".home.Accueil"></activity>
-
+        <activity android:name=".home.Accueil" />
+        <activity
+            android:name=".home.HomePage"
+            android:label="@string/title_activity_home_page"
+            android:theme="@style/YoupiTheme"></activity>
     </application>
 
 </manifest>
