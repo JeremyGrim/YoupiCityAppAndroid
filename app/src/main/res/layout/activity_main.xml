@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical"
+android:descendantFocusability="beforeDescendants"
+android:focusableInTouchMode="true"
+tools:context="com.webgump.youpicityappandroid.MainActivity">
+
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_alignParentTop="true"
+    android:layout_alignParentStart="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_gravity="top"
+        android:weightSum="1">
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="70dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="220dp"
+                android:layout_height="52dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/logo"
+                android:scaleType="centerCrop"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="0.93"
+            android:paddingTop="60dp">
+
+            <EditText
+                android:id="@+id/usernameEdit"
+                android:layout_width="250dp"
+                android:layout_height="45dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:ems="10"
+                android:hint="Pseudo"
+                android:textColorHint="#b9b9b9"
+                android:inputType="textPersonName"
+                android:paddingLeft="10dp"
+                android:textSize="12sp"
+
+                />
+
+            <EditText
+                android:id="@+id/passwordEdit"
+                android:layout_width="250dp"
+                android:layout_height="45dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:ems="10"
+                android:hint="Password"
+                android:textColorHint="#b9b9b9"
+                android:inputType="textPassword"
+                android:paddingLeft="10dp"
+                android:textSize="12sp"
+                android:layout_marginBottom="10dp"
+                />
+
+
+                <Button
+                    android:id="@+id/SignIn"
+                    android:layout_width="250dp"
+                    android:layout_height="45dp"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:background="@color/colorPrimary"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Button"
+                    android:text="Se connecter"/>
+
+
+                <Button
+                    android:id="@+id/login"
+                    android:layout_width="250dp"
+                    android:layout_height="45dp"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="@android:color/white"
+                    android:background="@color/colorPrimary"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Button"
+                    android:text="Créer un compte"/>
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+</ScrollView>
+
+
+</RelativeLayout>
