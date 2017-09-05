@@ -12,14 +12,17 @@ import com.webgump.youpicityappandroid.R;
 
 public class HomeFragment extends Fragment {
 
-    private View parentView;
-    private ResideMenu resideMenu;
+//    private View parentView;
+//    private ResideMenu resideMenu;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        parentView = inflater.inflate(R.layout.fragment_home, container, false);
+        return inflater.inflate(R.layout.activity_home_page, container, false);
+//        parentView = inflater.inflate(R.layout.fragment_home, container, false);
         //setUpViews();
-        return parentView;
+//        return parentView;
+
+
 
 
     }

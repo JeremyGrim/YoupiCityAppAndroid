@@ -56,7 +56,7 @@ public class Accueil extends AppCompatActivity implements View.OnClickListener{
         resideMenu.addMenuItem(itemSettings, ResideMenu.DIRECTION_RIGHT);
 
         // You can disable a direction by setting ->
-        //resideMenu.setSwipeDirectionDisable(ResideMenu.DIRECTION_LEFT);
+        resideMenu.setSwipeDirectionDisable(ResideMenu.DIRECTION_LEFT);
 
         /*findViewById(R.id.title_bar_left_menu).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -92,12 +92,12 @@ public class Accueil extends AppCompatActivity implements View.OnClickListener{
     private ResideMenu.OnMenuListener menuListener = new ResideMenu.OnMenuListener() {
         @Override
         public void openMenu() {
-            Toast.makeText(mContext, "Menu is opened!", Toast.LENGTH_SHORT).show();
+
         }
 
         @Override
         public void closeMenu() {
-            Toast.makeText(mContext, "Menu is closed!", Toast.LENGTH_SHORT).show();
+
         }
     };
 

@@ -18,7 +18,6 @@
     <com.astuetz.PagerSlidingTabStrip
 
         android:id="@+id/tabs"
-        android:layout_alignParentBottom="true"
         app:pstsShouldExpand="true"
         android:layout_width="match_parent"
         android:layout_height="65dp"
