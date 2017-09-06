@@ -1,115 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-xmlns:tools="http://schemas.android.com/tools"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-android:orientation="vertical"
-android:descendantFocusability="beforeDescendants"
-android:focusableInTouchMode="true"
-tools:context="com.webgump.youpicityappandroid.MainActivity">
-
-
-<ScrollView
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_alignParentTop="true"
-    android:layout_alignParentStart="true">
+    android:orientation="vertical"
+    android:scaleType="centerCrop"
+    android:background="@drawable/splash">
+
+    <ImageView
+        android:id="@+id/logoSplash"
+        android:layout_width="200dp"
+        android:layout_height="400dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/logo_white"
+
+        />
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_gravity="top"
-        android:weightSum="1">
+        android:gravity="bottom">
 
-
-
-        <LinearLayout
+        <Button
+            android:id="@+id/SignIn"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="70dp"
-            android:orientation="vertical">
+            android:layout_marginBottom="10dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:background="@drawable/btn_white"
+            android:textColor="@color/colorPrimaryDark"
+            android:text="Se connecter"
+            android:elevation="5dp"
+            android:textAllCaps="false" />
 
-            <ImageView
-                android:layout_width="220dp"
-                android:layout_height="52dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="40dp"
-                android:background="@drawable/logo"
-                android:scaleType="centerCrop"
-                />
-
-        </LinearLayout>
-
-        <LinearLayout
+        <Button
+            android:id="@+id/ConnexionFB"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_weight="0.93"
-            android:paddingTop="60dp">
+            android:layout_height="50dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:text="Connexion par Facebook"
+            android:background="@drawable/btn_blue"
+            android:textColor="@color/white"
+            android:elevation="5dp"
+            android:textAllCaps="false" />
 
-            <EditText
-                android:id="@+id/usernameEdit"
-                android:layout_width="250dp"
-                android:layout_height="45dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="10dp"
-                android:ems="10"
-                android:hint="Pseudo"
-                android:textColorHint="#b9b9b9"
-                android:inputType="textPersonName"
-                android:paddingLeft="10dp"
-                android:textSize="12sp"
-
-                />
-
-            <EditText
-                android:id="@+id/passwordEdit"
-                android:layout_width="250dp"
-                android:layout_height="45dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="10dp"
-                android:ems="10"
-                android:hint="Password"
-                android:textColorHint="#b9b9b9"
-                android:inputType="textPassword"
-                android:paddingLeft="10dp"
-                android:textSize="12sp"
-                android:layout_marginBottom="10dp"
-                />
-
-
-                <Button
-                    android:id="@+id/SignIn"
-                    android:layout_width="250dp"
-                    android:layout_height="45dp"
-                    android:layout_gravity="center_horizontal"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:background="@color/colorPrimary"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Button"
-                    android:text="Se connecter"/>
-
-
-                <Button
-                    android:id="@+id/login"
-                    android:layout_width="250dp"
-                    android:layout_height="45dp"
-                    android:layout_gravity="center_horizontal"
-                    android:textColor="@android:color/white"
-                    android:background="@color/colorPrimary"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Button"
-                    android:text="Créer un compte"/>
-
-
-        </LinearLayout>
-
+        <Button
+            android:id="@+id/SignUp"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="20dp"
+            android:background="@android:color/transparent"
+            android:text="Créer un compte"
+            android:textAllCaps="false"
+            android:textSize="12dp" />
 
 
     </LinearLayout>
-
-</ScrollView>
-
-
-</RelativeLayout>
+</LinearLayout>

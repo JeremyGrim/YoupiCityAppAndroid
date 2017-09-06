@@ -26,8 +26,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        final Button login = (Button) findViewById(R.id.login);
-        login.setOnClickListener(new View.OnClickListener() {
+        final Button connexionFB = (Button) findViewById(R.id.ConnexionFB);
+        connexionFB.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {

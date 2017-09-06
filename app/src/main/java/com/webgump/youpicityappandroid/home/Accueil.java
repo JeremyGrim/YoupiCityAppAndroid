@@ -45,10 +45,18 @@ public class Accueil extends AppCompatActivity implements View.OnClickListener{
         viewPager.setAdapter(new SampleFragmentPagerAdapter(getSupportFragmentManager()));
 
         PagerSlidingTabStrip tabsStrip = (PagerSlidingTabStrip) findViewById(R.id.tabs);
+        tabsStrip.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FrameLayout f = (FrameLayout) findViewById(R.id.main_fragment);
+                f.setVisibility(FrameLayout.GONE);
+            }
+        });
         tabsStrip.setViewPager(viewPager);
         tabsStrip.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
 
             @Override
+
             public void onPageSelected(int position) {
 
                 FrameLayout f = (FrameLayout) findViewById(R.id.main_fragment);
@@ -66,6 +74,8 @@ public class Accueil extends AppCompatActivity implements View.OnClickListener{
             public void onPageScrollStateChanged(int state) {
             }
         });
+
+
     }
 
     private void setUpMenu() {
@@ -77,8 +87,8 @@ public class Accueil extends AppCompatActivity implements View.OnClickListener{
         resideMenu.setMenuListener(menuListener);
         resideMenu.setScaleValue(0.6f);
 
-        itemAccount     = new ResideMenuItem(this, R.drawable.icon_account,     "Mon compte");
-        itemSettings = new ResideMenuItem(this, R.drawable.icon_settings, "Settings");
+        itemAccount     = new ResideMenuItem(this, R.drawable.ic_account, "Mon compte");
+        itemSettings = new ResideMenuItem(this, R.drawable.ic_settings, "Settings");
 
         itemAccount.setOnClickListener(this);
         itemSettings.setOnClickListener(this);
