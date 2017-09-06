@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.webgump.youpicityappandroid.account.SignIn;
+import com.webgump.youpicityappandroid.account.SignUp;
 import com.webgump.youpicityappandroid.home.Accueil;
 import com.webgump.youpicityappandroid.home.HomeFragment;
 
@@ -24,8 +25,8 @@ public class MainActivity extends AppCompatActivity {
         getWindow().setExitTransition(slideOut);
 
 
-        final Button connexion = (Button) findViewById(R.id.SignIn);
-        connexion.setOnClickListener(new View.OnClickListener() {
+        final Button SignIn = (Button) findViewById(R.id.SignIn);
+        SignIn.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -42,6 +43,17 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, MainActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        final Button signUp = (Button) findViewById(R.id.SignUp);
+        signUp.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, SignUp.class);
+                Bundle bundle = ActivityOptions.makeSceneTransitionAnimation(MainActivity.this).toBundle();
+                startActivity(intent, bundle);
             }
         });
 
