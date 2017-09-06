@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.Toast;
 
 import com.astuetz.PagerSlidingTabStrip;
@@ -21,7 +22,7 @@ public class Accueil extends AppCompatActivity implements View.OnClickListener{
 
     private ResideMenu resideMenu;
     private Context mContext;
-    private ResideMenuItem itemHome;
+    private ResideMenuItem itemAccount;
     private ResideMenuItem itemSettings;
 
     /**
@@ -36,72 +37,57 @@ public class Accueil extends AppCompatActivity implements View.OnClickListener{
 
         mContext = this;
         setUpMenu();
-        if( savedInstanceState == null )
-            changeFragment(new HomeFragment());
+        //if( savedInstanceState == null )
+        //    changeFragment(new HomeFragment());
 
 
-        // Get the ViewPager and set it's PagerAdapter so that it can display items
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
         viewPager.setAdapter(new SampleFragmentPagerAdapter(getSupportFragmentManager()));
 
-        // Give the PagerSlidingTabStrip the ViewPager
         PagerSlidingTabStrip tabsStrip = (PagerSlidingTabStrip) findViewById(R.id.tabs);
-        // Attach the view pager to the tab strip
         tabsStrip.setViewPager(viewPager);
         tabsStrip.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
 
-            // This method will be invoked when a new page becomes selected.
             @Override
             public void onPageSelected(int position) {
+
+                FrameLayout f = (FrameLayout) findViewById(R.id.main_fragment);
+                f.setVisibility(FrameLayout.GONE);
                 Toast.makeText(Accueil.this,
                         "Selected page position: " + position, Toast.LENGTH_SHORT).show();
             }
 
-            // This method will be invoked when the current page is scrolled
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
                 // Code goes here
             }
 
-            // Called when the scroll state changes:
-            // SCROLL_STATE_IDLE, SCROLL_STATE_DRAGGING, SCROLL_STATE_SETTLING
             @Override
             public void onPageScrollStateChanged(int state) {
-                // Code goes here
             }
         });
     }
 
     private void setUpMenu() {
 
-        // attach to current activity;
         resideMenu = new ResideMenu(this);
 
         resideMenu.setBackground(R.drawable.menu_background);
         resideMenu.attachToActivity(this);
         resideMenu.setMenuListener(menuListener);
-        //valid scale factor is between 0.0f and 1.0f. leftmenu'width is 150dip.
         resideMenu.setScaleValue(0.6f);
 
-        // create menu items;
-        itemHome     = new ResideMenuItem(this, R.drawable.icon_home,     "Home");
+        itemAccount     = new ResideMenuItem(this, R.drawable.icon_account,     "Mon compte");
         itemSettings = new ResideMenuItem(this, R.drawable.icon_settings, "Settings");
 
-        itemHome.setOnClickListener(this);
+        itemAccount.setOnClickListener(this);
         itemSettings.setOnClickListener(this);
 
-        resideMenu.addMenuItem(itemHome, ResideMenu.DIRECTION_RIGHT);
+        resideMenu.addMenuItem(itemAccount, ResideMenu.DIRECTION_RIGHT);
         resideMenu.addMenuItem(itemSettings, ResideMenu.DIRECTION_RIGHT);
 
-        // You can disable a direction by setting ->
         resideMenu.setSwipeDirectionDisable(ResideMenu.DIRECTION_LEFT);
 
-        /*findViewById(R.id.title_bar_left_menu).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                resideMenu.openMenu(ResideMenu.DIRECTION_LEFT);
-            }
-        });*/
         findViewById(R.id.title_bar_right_menu).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -118,7 +104,10 @@ public class Accueil extends AppCompatActivity implements View.OnClickListener{
     @Override
     public void onClick(View view) {
 
-        if (view == itemHome){
+        FrameLayout f = (FrameLayout) findViewById(R.id.main_fragment);
+        f.setVisibility(FrameLayout.VISIBLE);
+
+        if (view == itemAccount){
             changeFragment(new HomeFragment());
         }else if (view == itemSettings){
             changeFragment(new SettingsFragment());
@@ -148,7 +137,6 @@ public class Accueil extends AppCompatActivity implements View.OnClickListener{
                 .commit();
     }
 
-    // What good method is to access resideMenu？
     public ResideMenu getResideMenu(){
         return resideMenu;
     }
